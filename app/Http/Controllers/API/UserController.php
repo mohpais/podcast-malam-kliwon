@@ -46,7 +46,7 @@ class UserController extends Controller
         $currentUser = Auth::user();
 
         // Build the query excluding the current user
-        $query = User::where('email', '<>', $currentUser->email)
+        $query = User::where('id', '<>', $currentUser->id)
             ->with('roles');
         // Use the DataTableService or any other logic as needed
         $response = $this->dataTableService->getJsonResponse($query, $request);

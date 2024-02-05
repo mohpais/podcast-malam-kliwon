@@ -27,7 +27,7 @@ git clone https://github.com/mohpais/hidayah-website
 ```
 2. Open folder using command 
 ```
-cd laravel-vue-template
+cd podcast-malam-kliwon
 ```
 3. Install package for laravel 
 ```
@@ -51,7 +51,7 @@ npm install
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=YOUR_DB_NAME
+DB_DATABASE=pmk
 DB_USERNAME=YOUR_DB_USERNAME
 DB_PASSWORD=YOUR_DB_PASSWORD
 ```

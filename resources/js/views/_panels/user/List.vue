@@ -6,7 +6,7 @@
                     <div class="card-header border-bottom d-flex justify-content-between">
                         <div class="title">
                             <h5 class="card-title">User List</h5>
-                            <h6 class="card-subtitle text-muted fz-13">The following is a list of users in the TNovel App.</h6>
+                            <h6 class="card-subtitle text-muted fz-13">The following is a list of users in the website.</h6>
                         </div>
                         <div class="action my-auto">
                             <!-- <button class="btn btn-sm btn-success" @click="openModal()">

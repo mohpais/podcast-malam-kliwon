@@ -1,12 +1,6 @@
 <template>
     <div class="main-loader">
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
+        <div class="loader"></div>
         <div ref="loaderTitleElement" class="loader-title">Loading ...</div>
     </div>
 </template>
@@ -31,7 +25,7 @@
             const title = loaderTitleElement.value;
             typeLoading(title);
         }
-    })
+    })    
 </script>
 
 <style scoped>
@@ -48,188 +42,79 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: #252525;
+        background: #1D1F20;
     }
 
-    .loader {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        animation: scale-loader 1s cubic-bezier(0.12, 0.01, 1, 1)infinite;
-        -o-animation: scale-loader 1s cubic-bezier(0.12, 0.01, 1, 1)infinite;
-        -moz-animation: scale-loader 1s cubic-bezier(0.12, 0.01, 1, 1)infinite;
-        -webkit-animation: scale-loader 1s cubic-bezier(0.12, 0.01, 1, 1)infinite;
-    }
-
-    .loader span {
-        position: absolute;
-        width: 50px;
+    .loader  {
+        animation: rotate 1s infinite;  
         height: 50px;
-        animation: rotate-loader-span 1s cubic-bezier(0.12, 0.01, 1, 1) infinite;
-        -o-animation: rotate-loader-span 1s cubic-bezier(0.12, 0.01, 1, 1) infinite;
-        -moz-animation: rotate-loader-span 1s cubic-bezier(0.12, 0.01, 1, 1) infinite;
-        -webkit-animation: rotate-loader-span 1s cubic-bezier(0.12, 0.01, 1, 1) infinite;
+        width: 50px;
     }
 
-    .loader span:nth-child(1) {
-        background: #F79F1F;
-        top: 0;
-        left: 0;
+    .loader:before,
+    .loader:after {   
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 20px;  
+        width: 20px;
+    }
+    .loader:before {
+    animation: ball1 1s infinite;  
+    background-color: #cb2025;
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+    }
+    .loader:after {
+    animation: ball2 1s infinite; 
+    background-color: #00a096;
+    box-shadow: 30px 0 0 #97bf0d;
     }
 
-    .loader span:nth-child(2) {
-        background: #12CBC4;
-        top: 0;
-        right: 0;
+    @keyframes rotate {
+    0% { 
+        -webkit-transform: rotate(0deg) scale(0.8); 
+        -moz-transform: rotate(0deg) scale(0.8);
+    }
+    50% { 
+        -webkit-transform: rotate(360deg) scale(1.2); 
+        -moz-transform: rotate(360deg) scale(1.2);
+    }
+    100% { 
+        -webkit-transform: rotate(720deg) scale(0.8); 
+        -moz-transform: rotate(720deg) scale(0.8);
+    }
     }
 
-    .loader span:nth-child(3) {
-        background: #ED4C67;
-        bottom: 0;
-        left: 0;
+    @keyframes ball1 {
+    0% {
+        box-shadow: 30px 0 0 #f8b334;
+    }
+    50% {
+        box-shadow: 0 0 0 #f8b334;
+        margin-bottom: 0;
+        -webkit-transform: translate(15px,15px);
+        -moz-transform: translate(15px, 15px);
+    }
+    100% {
+        box-shadow: 30px 0 0 #f8b334;
+        margin-bottom: 10px;
+    }
     }
 
-    .loader span:nth-child(4) {
-        background: #A3CB38;
-        bottom: 0;
-        right: 0;
+    @keyframes ball2 {
+    0% {
+        box-shadow: 30px 0 0 #97bf0d;
     }
-
-    .loader-title {
-        position: absolute;
-        top: calc(50% + 118px);
-        color: #DDD;
-        font-size: 20px;
-        font-weight: 600;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        font-family: 'Courier New', Courier, monospace;
-        margin-left: 10px;
+    50% {
+        box-shadow: 0 0 0 #97bf0d;
+        margin-top: -20px;
+        -webkit-transform: translate(15px,15px);
+        -moz-transform: translate(15px, 15px);
     }
-
-    .loader-title::after {
-        content: '|';
-        display: inline-block;
-        margin-left: 5px;
-        animation: blink .7s infinite;
-        -o-animation: blink .7s infinite;
-        -moz-animation: blink .7s infinite;
-        -webkit-animation: blink .7s infinite;
+    100% {
+        box-shadow: 30px 0 0 #97bf0d;
+        margin-top: 0;
     }
-
-    @keyframes blink {
-
-        0%,
-        100% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: 0;
-        }
-    }
-
-    @keyframes scale-loader {
-
-        0%,
-        100% {
-            width: 100px;
-            height: 100px;
-        }
-
-        50% {
-            width: 150px;
-            height: 150px;
-        }
-    }
-
-    @-o-keyframes scale-loader {
-
-        0%,
-        100% {
-            width: 100px;
-            height: 100px;
-        }
-
-        50% {
-            width: 150px;
-            height: 150px;
-        }
-    }
-
-    @-moz-keyframes scale-loader {
-
-        0%,
-        100% {
-            width: 100px;
-            height: 100px;
-        }
-
-        50% {
-            width: 150px;
-            height: 150px;
-        }
-    }
-
-    @-webkit-keyframes scale-loader {
-
-        0%,
-        100% {
-            width: 100px;
-            height: 100px;
-        }
-
-        50% {
-            width: 150px;
-            height: 150px;
-        }
-    }
-
-    @keyframes rotate-loader-span {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        50%,
-        100% {
-            transform: rotate(90deg);
-        }
-    }
-
-    @-o-keyframes rotate-loader-span {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        50%,
-        100% {
-            transform: rotate(90deg);
-        }
-    }
-
-    @-moz-keyframes rotate-loader-span {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        50%,
-        100% {
-            transform: rotate(90deg);
-        }
-    }
-
-    @-webkit-keyframes rotate-loader-span {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        50%,
-        100% {
-            transform: rotate(90deg);
-        }
     }
 </style>

@@ -11,7 +11,7 @@
                             <div class="simplebar-content">
                                 <a class="sidebar-brand" href="/">
                                     <span class="sidebar-brand-text align-middle">
-                                        PMK Website
+                                        Podcast Malam Kliwon
                                     </span>
                                     <svg class="sidebar-brand-icon align-middle" width="32px" height="32px" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" color="#FFFFFF" style="margin-left: -3px">
                                         <path d="M12 4L20 8.00004L12 12L4 8.00004L12 4Z"></path>
@@ -98,12 +98,6 @@
                                     <li class="sidebar-item" :class="{ 'active': isActive('/panel/users', ['', '']) }">
                                         <router-link class="sidebar-link" to="/panel/users">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users align-middle"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <span class="align-middle">Users</span>
-                                        </router-link>
-                                    </li>
-
-                                    <li class="sidebar-item" :class="{ 'active': isActive('/panel/novels', ['', '']) }">
-                                        <router-link class="sidebar-link" to="/panel/novels">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book align-middle me-2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> <span class="align-middle">Novels</span>
                                         </router-link>
                                     </li>
 
